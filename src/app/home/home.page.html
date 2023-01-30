@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Last Class App </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense"> </ion-header>
+  <div *ngIf="weather$ | async as weather">
+    <h3>{{weather.product}}</h3>
+    <h3>{{weather.init}}</h3>
+    <ul *ngFor="let dp of weather.dataseries">
+      <li>{{dp.timepoint}}: {{dp.temp2m}}</li>
+    </ul>
+  </div>
+</ion-content>
